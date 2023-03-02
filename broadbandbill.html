@@ -584,15 +584,15 @@
             let getMonth = prompt("Enter Month-  Current month = 0, empty or cancel, next is  +1 and so on") ?? 0
             const now = new Date();
             const days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
-            const current = new Date(now.getFullYear(), now.getMonth() + Number(getMonth), 1);
+            const current = new Date(now.getFullYear(), now.getMonth() + Number(getMonth) + 1, 1);
             const monthNames = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"];
             const month = current.getMonth();
             const startMonth =startOfMonth(current).getDate();
             const endMonth = endOfMonth(current).getDate();
-            const monthInWords = monthNames[current.getMonth()];
-            const year = current.getFullYear();
-            const dayInWords = days[startOfMonth(current).getDay()];
+            const monthInWords = monthNames[month-1];
+            const year = current.getFullYear()
+            const dayInWords = days[startOfMonth(current).getDay()]
 
             document.getElementById('headingid').innerHTML = `ADL Billing of (TV74601) ${startMonth}/${monthInWords}/${year}`
             document.getElementById('titleid').innerHTML = `Gmail - ADL Billing of (TV74601) ${startMonth}/${monthInWords}/${year}`
